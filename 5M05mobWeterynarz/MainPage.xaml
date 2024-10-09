@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_5M05mobWeterynarz.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            BackgroundColor="LightGreen">
+
+            <Label
+                Text="Wizyta u weterynarza"
+                FontSize="30"
+                BackgroundColor="SeaGreen"
+                Margin="10"
+                />
+            <Entry
+                Placeholder="Imię i nazwisko właściciela>"
+                x:Name="entWlasciciel"
+                />
+            <Label
+                Text="Gatunek"
+                />
+            <ListView
+                x:Name="piZwierzak"
+                ItemSelected ="onZwierzWyb"  
+                >
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Pies</x:String>
+                        <x:String>Kot</x:String>
+                        <x:String>Świnka morska</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>
+            </ListView>
+            <HorizontalStackLayout Spacing="10">
+                <Label
+                    Text="Ile ma lat: 0"
+                    x:Name="lblWiek"
+                    />
+                <Slider
+                    Minimum="0"
+                    Maximum="20"
+                    x:Name="sldWiek"
+                    WidthRequest="400"
+                    ValueChanged="onSliderChanged"
+                    />
+            </HorizontalStackLayout>
+            <Entry
+                Placeholder="cel wizyty"
+                x:Name="entCel"
+                />
+            <TimePicker
+                Time="16:00"
+                x:Name="tpCzas"
+                />
+            <Button
+                Text="OK"
+                x:Name="btnOK"
+                Clicked="btnOKClicked"
+                />
+            <Label
+                Text=" "
+                x:Name="lblWynik"
+                />
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
